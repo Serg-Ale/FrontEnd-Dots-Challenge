@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# Teste Técnico - Desenvolvedor Front-end Jr: Aplicação de Inserção de Círculos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém a minha solução para um teste técnico de Desenvolvedor Front-end Jr. O teste tem como objetivo demonstrar minhas habilidades com o desenvolvimento de uma aplicação web utilizando **React**, implementando funcionalidades de interação com cliques e controle de histórico.
 
-Currently, two official plugins are available:
+## Desafio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O desafio consiste em criar uma aplicação em **React** onde o usuário possa clicar na tela para adicionar círculos, e contar com as funcionalidades de **Desfazer (Undo)** e **Refazer (Redo)** para controlar a inserção dos círculos.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Inserção de Círculos**:
+   - Ao clicar em qualquer área da tela, um círculo é inserido na posição exata do clique.
+2. **Desfazer (Undo)**:
+   - Um botão de "Desfazer" que remove o último círculo adicionado.
+   - O botão deve ficar desativado caso não haja círculos na tela.
+3. **Refazer (Redo)**:
+   - Um botão de "Refazer" que restaura o último círculo removido pelo botão "Desfazer".
+   - O botão deve ficar desativado caso não haja ações a refazer.
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias Utilizadas
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: Biblioteca principal para construção da interface.
+- **Vite**: Ferramenta para bundling e desenvolvimento.
+- **Hooks do React**: Utilizados para gerenciamento de estado.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Instruções para Rodar o Projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+> Certifique-se de ter o **Node.js** e **npm** instalados em sua máquina.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Serg-Ale/FrontEnd-Dots-Challenge.git
+   ```
+
+2. Acesse o diretório do projeto:
+
+   ```bash
+   cd FrontEnd-Dots-Challenge
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Acesse a aplicação em seu navegador no endereço: [http://localhost:5173](http://localhost:5173)
+
+## Como Contribuir
+
+Se desejar melhorar este projeto ou corrigir algo, siga os passos abaixo:
+
+1. Fork o repositório.
+2. Crie uma branch para sua feature/correção:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Commit suas alterações:
+   ```bash
+   git commit -m 'Adicionei uma nova feature'
+   ```
+4. Envie para o seu repositório:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um **Pull Request** no repositório original.
+
+## Autor
+
+Feito com ❤️ por [Sérgio Alexandre](https://github.com/Serg-Ale). Entre em contato!
