@@ -34,8 +34,12 @@ function App() {
   return (
     <div className="app">
       <div className="button-wrapper">
-        <button onClick={undo}>Undo</button>
-        <button onClick={redo}>Redo</button>
+        <button disabled={dots.length === 0} onClick={undo}>
+          Undo
+        </button>
+        <button disabled={cach.length === 0} onClick={redo}>
+          Redo
+        </button>
       </div>
       <div className="click-area" onClick={setDotCoordinates}>
         {dots.map(({ x, y }: Dots, index: number) => (
