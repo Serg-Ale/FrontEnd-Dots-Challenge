@@ -30,8 +30,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: cyan;
-  border: 1px solid chartreuse;
+  background-color: pink;
+  border: 1px solid hotpink;
 
   transform: translate(-50%, -50%);
 }
