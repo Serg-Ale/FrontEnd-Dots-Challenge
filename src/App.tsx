@@ -1,10 +1,8 @@
-import { useState, type MouseEvent } from "react";
+import { useState, MouseEvent } from "react";
+import ButtonWrapper from "./components/ButtonWrapper";
+import ClickArea from "./components/ClickArea";
+import { Dots } from "./types/Dots";
 import "./App.css";
-
-interface Dots {
-  x: number;
-  y: number;
-}
 
 function App() {
   const [dots, setDots] = useState<Dots[]>([]);
@@ -33,23 +31,13 @@ function App() {
 
   return (
     <div className="app">
-      <div className="button-wrapper">
-        <button disabled={dots.length === 0} onClick={undo}>
-          Undo
-        </button>
-        <button disabled={cach.length === 0} onClick={redo}>
-          Redo
-        </button>
-      </div>
-      <div className="click-area" onClick={setDotCoordinates}>
-        {dots.map(({ x, y }: Dots, index: number) => (
-          <div
-            className="dot"
-            key={`dot-${index}`}
-            style={{ left: x, top: y }}
-          />
-        ))}
-      </div>
+      <ButtonWrapper
+        onUndo={undo}
+        onRedo={redo}
+        canUndo={dots.length > 0}
+        canRedo={cach.length > 0}
+      />
+      <ClickArea dots={dots} onClick={setDotCoordinates} />
     </div>
   );
 }
