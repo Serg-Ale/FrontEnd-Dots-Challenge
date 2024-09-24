@@ -2,7 +2,14 @@ import { useState, MouseEvent } from "react";
 import ButtonWrapper from "./components/ButtonWrapper";
 import ClickArea from "./components/ClickArea";
 import { Dots } from "./types/Dots";
-import "./App.css";
+import styled from "styled-components";
+
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 function App() {
   const [dots, setDots] = useState<Dots[]>([]);
@@ -30,15 +37,16 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <AppContainer>
+      <ClickArea dots={dots} onClick={setDotCoordinates} />
+
       <ButtonWrapper
         onUndo={undo}
         onRedo={redo}
-        canUndo={dots.length > 0}
-        canRedo={cach.length > 0}
+        canUndo={dots.length > -1}
+        canRedo={cach.length > -1}
       />
-      <ClickArea dots={dots} onClick={setDotCoordinates} />
-    </div>
+    </AppContainer>
   );
 }
 

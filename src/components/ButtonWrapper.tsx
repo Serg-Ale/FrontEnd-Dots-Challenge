@@ -1,9 +1,32 @@
+import styled from "styled-components";
+
 interface ButtonWrapperProps {
   onUndo: () => void;
   onRedo: () => void;
   canUndo: boolean;
   canRedo: boolean;
 }
+
+const ButtonWrapperContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #444;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:disabled {
+    background-color: #111;
+    cursor: not-allowed;
+  }
+`;
 
 const ButtonWrapper = ({
   onUndo,
@@ -12,14 +35,14 @@ const ButtonWrapper = ({
   canRedo,
 }: ButtonWrapperProps) => {
   return (
-    <div className="button-wrapper">
-      <button disabled={!canUndo} onClick={onUndo}>
+    <ButtonWrapperContainer>
+      <Button disabled={!canUndo} onClick={onUndo}>
         Undo
-      </button>
-      <button disabled={!canRedo} onClick={onRedo}>
+      </Button>
+      <Button disabled={!canRedo} onClick={onRedo}>
         Redo
-      </button>
-    </div>
+      </Button>
+    </ButtonWrapperContainer>
   );
 };
 
